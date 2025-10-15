@@ -66,7 +66,9 @@ public class TransactionController {
 		Transactions results;
 		
 		// Get all transactions from the database for a particular client.
-		results = transDao.findOne(clientId);
+		// results = transDao.findOne(clientId);
+		results = transDao.findById(clientId).orElse(null);
+
 		
 		return new ResponseEntity<Transactions>(results, HttpStatus.OK);
 	}

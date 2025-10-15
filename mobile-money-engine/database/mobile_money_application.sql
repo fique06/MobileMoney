@@ -25,6 +25,9 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `configurations`
 --
+-- CREATE DATABASE momo_app;
+
+USE momo_app;
 
 CREATE TABLE `configurations` (
   `id` int(11) NOT NULL,

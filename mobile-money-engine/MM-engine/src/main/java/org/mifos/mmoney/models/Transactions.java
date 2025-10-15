@@ -2,12 +2,12 @@ package org.mifos.mmoney.models;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 /**
  * 
@@ -29,14 +29,18 @@ public class Transactions {
 	public Transactions(){}
 	
 	// Column names in the database
+	// @Column(name="staff")
+	// private static String staff;
 	@Column(name="staff")
-	private static String staff;
+	private String staff;
 	
 	@Column(name="client_id")
 	private int client_id;
 	
+	// @Column(name="office")
+	// private static String office;
 	@Column(name="office")
-	private static String office;
+	private String office;
 	
 	@Column(name="transaction_type")
 	private String type;
@@ -61,18 +65,26 @@ public class Transactions {
 	public void setClient_id(int clientId) {
 		this.client_id = clientId;
 	}
+	// public String getStaff() {
+	// 	return Transactions.staff;
+	// }
 	public String getStaff() {
-		return Transactions.staff;
-	}
-	public void setStaff(String staff) {
-		Transactions.staff = staff;
-	}
+		 return staff; }
+    public void setStaff(String staff) {
+		 this.staff = staff; }
+	// public void setStaff(String staff) {
+	// 	Transactions.staff = staff;
+	// }
 	public String getOffice() {
-		return Transactions.office;
-	}
-	public void setOffice(String office) {
-		Transactions.office = office;
-	}
+		 return office; }
+    public void setOffice(String office) {
+		 this.office = office; }
+	// public String getOffice() {
+	// 	return Transactions.office;
+	// }
+	// public void setOffice(String office) {
+	// 	Transactions.office = office;
+	// }
 	public String getType() {
 		return this.type;
 	}
