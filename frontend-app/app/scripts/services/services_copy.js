@@ -7,7 +7,7 @@ angular.module('mobileMoneyApp')
 		function($http){
 		
 		/*var baseUrl = "https://demo.openmf.org/fineract-provider/api/v1/"; */
-		var baseUrl = "https://161.35.167.155:8443/fineract-provider/api/v1/";
+		var baseUrl = "https://192.168.0.108:8443/fineract-provider/api/v1/";
 
 		var authFactory = {};
 		
@@ -60,7 +60,7 @@ angular.module('mobileMoneyApp')
 	.factory('dataFactory', ['$http', function($http){
 		
 	/*	var urlBase = "https://demo.openmf.org/fineract-provider/api/v1/";   */
-		var urlBase = "https://161.35.167.155:8443/fineract-provider/api/v1/";
+		var urlBase = "https://192.168.0.108:8443/fineract-provider/api/v1/";
 
 		var dataFactory = {};
 		
@@ -87,7 +87,7 @@ angular.module('mobileMoneyApp')
 	.factory('mobileMoneyFactory', ['$http', function($http){
 		
 	/*	var baseUrl = "http://localhost:8090/api/v1/"; */
-		var baseUrl = "http://161.35.167.155:8060/api/v1/";
+		var baseUrl = "http://192.168.0.108:8060/api/v1/";
 
 		var mobileMoneyFactory = {};
 		
@@ -117,7 +117,7 @@ angular.module('mobileMoneyApp')
 	.factory('utilFactory', ['$http', function($http){
 		
 	/*	var baseUrl = "http://localhost:8090/api/v1/transactions";   */
-		var baseUrl = "http://161.35.167.155:8060/api/v1/transactions";
+		var baseUrl = "http://192.168.0.108:8060/api/v1/transactions";
 
 		var utilFactory = {};
 		
@@ -126,12 +126,12 @@ angular.module('mobileMoneyApp')
 		};
 		
 		utilFactory.initTransactions = function(staff, office){
-			var requestUrl = "http://161.35.167.155:8060/api/v1/create?staff=" + staff + "&office=" + office; 
+			var requestUrl = "http://192.168.0.108:8060/api/v1/create?staff=" + staff + "&office=" + office; 
 			return $http.get(requestUrl);
 		};
 		
 		utilFactory.withdrawals = function(accountId, amount, dateToUse){
-				var url = "https://161.35.167.155:8443/fineract-provider/api/v1/savingsaccounts/" + accountId
+				var url = "https://192.168.0.108:8443/fineract-provider/api/v1/savingsaccounts/" + accountId
 					 + "/transactions?command=withdrawal";
 
 		      	return $http({
@@ -153,7 +153,7 @@ angular.module('mobileMoneyApp')
 			};
 			
 			utilFactory.savings = function(accountId, amount, dateToUse){
-				var url = "https://161.35.167.155:8443/fineract-provider/api/v1/savingsaccounts/" + accountId 
+				var url = "https://192.168.0.108:8443/fineract-provider/api/v1/savingsaccounts/" + accountId 
 					+ "/transactions?command=deposit";
 
 		      	return $http({
@@ -180,7 +180,7 @@ angular.module('mobileMoneyApp')
 	/* factory for loan repayment */
 	.factory('loanFactory', ['$http', function($http){
 		
-		var baseUrl = "https://161.35.167.155:8443/fineract-provider/api/v1/";
+		var baseUrl = "https://192.168.0.108:8443/fineract-provider/api/v1/";
 		var loanFactory = {};
 		
 		loanFactory.disburseToSavingsProcess = function(accountId, disburseDate){

@@ -1,0 +1,21 @@
+
+ version: '3.9'
+
+ services:
+   24points_momo_backend: 
+     image: momo_app_backend
+     container_name: 24Points_momo_app_backend
+     networks: 
+       - fineract_default
+     environment:
+       FINERACT_HIKARI_JDBC_URL: jdbc:mariadb://db:3306/fineract_tenants
+       FINERACT_DEFAULT_TENANTDB_UID: root
+       FINERACT_DEFAULT_TENANTDB_PORT: 3306
+       FINERACT_HIKARI_DRIVER_SOURCE_CLASS_NAME: org.mariadb.jdbc.Driver
+     ports:
+       - "8060:8060"
+
+ networks:
+   fineract_default:
+      external: true
+
