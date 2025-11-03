@@ -367,6 +367,18 @@ module.exports = function (grunt) {
         html: ['<%= yeoman.dist %>/*.html']
       }
     },
+    cssmin: {
+      dist: {
+       files: [{
+        expand: true,
+        cwd: '.tmp/styles',
+        src: ['*.css'],
+        dest: '<%= yeoman.dist %>/styles',
+        ext: '.css'
+       }]
+      }
+    },
+
 
     // Copies remaining files to places other tasks can use
     copy: {
@@ -380,7 +392,11 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '*.html',
             'images/{,*/}*.{webp}',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+	    'styles/libs/{,*/}*.*',
+	    'scripts/**/*.js',
+            'views/**/*',
+            'bower_components/**/*' 
           ]
         }, {
           expand: true,
@@ -418,7 +434,18 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    uglify: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/concat/scripts',
+          src: '**/*.js',
+          dest: '<%= yeoman.dist %>/scripts'
+        }]
+      }
     }
+
   });
 
 
@@ -461,7 +488,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+   // 'cdnify',
     'cssmin',
     'uglify',
     'filerev',

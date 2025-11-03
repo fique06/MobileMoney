@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  # Frontend service
+  24point_momo_app:
+    image: momo_app:latest
+    container_name: 24points_momo_app
+    restart: always
+    ports:
+      - 8070:80
+
+
