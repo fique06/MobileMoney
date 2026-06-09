@@ -37,12 +37,17 @@ angular.module('mobileMoneyApp')
             			password: password
         		};
 
-        		var config = {
-            			headers: {
-                			'Content-Type': 'application/json',
-                			'Fineract-Platform-TenantId': 'default'
-            			}
-        		};
+        		// var config = {
+            	// 		headers: {
+                // 			'Content-Type': 'application/json',
+                // 			'Fineract-Platform-TenantId': 'default'
+            	// 		}
+        		// };
+				 var config = {
+					cache: false,
+					dataType: 'json',
+					contentType: "application/json; charset=utf-8"
+					};
 
         		var authKeyRequest = baseUrl + "authentication";
 
@@ -54,6 +59,7 @@ angular.module('mobileMoneyApp')
     		};
 
     		return authFactory;
+		
 	}]) 
 	
 	/* factory to get client data */

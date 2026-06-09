@@ -15,6 +15,10 @@ angular.module('mobileMoneyApp')
 			 // show spinner
 		     $scope.loading = true;
 			 $scope.submitted = false;
+
+		
+		// console.log("LOGIN ROOTSCOPE:", $rootScope.username, $rootScope.password);
+
 			 authFactory.getAuthKey($scope.username, $scope.password)
 			 	.then(function(response){
 					var basicKey = response.data.base64EncodedAuthenticationKey;

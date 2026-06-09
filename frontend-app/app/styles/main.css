@@ -180,7 +180,7 @@ body{
 }
 
 .clientInfo tr:hover, .tableStyle a:hover {
-	background-color: #1E88E5 !important;
+	background-color: #ADACB5 !important;
 	color: white;
 	cursor: pointer;
 }

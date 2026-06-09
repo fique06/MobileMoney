@@ -12,6 +12,8 @@ angular.module('mobileMoneyApp')
     $rootScope.clientId = $stateParams.id;
 	
 	// authenticate user
+	// console.log("Username:", $rootScope.username);
+	// console.log("Password:", $rootScope.password);
 	authFactory.getAuthKey($rootScope.username, $rootScope.password)
     	.then(function (response) {
 			var basicKey = response.data.base64EncodedAuthenticationKey;

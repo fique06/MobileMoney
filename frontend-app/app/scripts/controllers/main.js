@@ -5,8 +5,10 @@ angular.module('mobileMoneyApp')
 	function ($rootScope, $scope, $http, authFactory, dataFactory) {
 		
       $scope.loading = true;
-	  
-	  authFactory.getAuthKey("mifos", "password")
+	//   console.log("AUTH CALL STARTING");
+	//   console.log("LOGIN ROOTSCOPE:", $rootScope.username, $rootScope.password);
+	//   authFactory.getAuthKey("mifos", "Mynameis1*M")
+	authFactory.getAuthKey($rootScope.username, $rootScope.password)
 	  		.then(function(response){
 				var basicKey = response.data.base64EncodedAuthenticationKey;
 				authFactory.setBasicAuthKey(basicKey);
