@@ -10,6 +10,7 @@ angular.module('mobileMoneyApp')
 		var baseUrl = "https://161.35.167.155:8443/fineract-provider/api/v1/";
 
 		var authFactory = {};
+		//fuck off
 		
        /*		authFactory.getAuthKey = function(username, password){
 	        var loginCreds = {};
